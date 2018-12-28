@@ -64,22 +64,25 @@ function change(g) {
 			p1+=t1*s;
 			ei('s01').value=p1;
 			ei('m1').style.width=p1/200+"%";
+			if(p1>=20000) clearInterval(play);
 		break;
 		case 'g2':
 			var	p2=parseFloat(ei('s02').value);
 			p2+=t2*s;
 			ei('s02').value=p2;
 			ei('m2').style.width=p2/200+"%";
+			if(p2>=20000) clearInterval(play);
 		break;
 		case 'g3':
 			var	p3=parseFloat(ei('s03').value);
 			p3+=t3*s;
 			ei('s03').value=p3;
 			ei('m3').style.width=p3/200+"%";
+			if(p3>=20000) clearInterval(play);
 		break;
 	}
 }
-setInterval(function(){
+play = setInterval(function(){
 	if(typeof s1 !== 'undefined' && typeof t1 !== 'undefined'){
 		change('g1');
 	}
