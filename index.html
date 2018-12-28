@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta https-equiv="Content-Type" content="text/html" charset="utf-8"/>
+	<meta name="robots" content="index,nofollow">
+	<meta https-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css.css">
+	<script type="text/javascript" src="./js.js"></script>
+</head>
+<body>
+	<h1>점령전 계산기(Siege Calculator)</h1>
+	<div class="layer">
+		<div class="content">
+			<div style="margin-top: 50px;font-size: 22px;">
+				배속(speed):
+				<select style="width: 280px;font-size: 16px;" id="speed" onchange="alert(ei('speed').selectedIndex)">
+					<option>Select Speed</option>
+					<option>×1</option>
+					<option>×2</option>
+					<option>×3</option>
+					<option>×4</option>
+					<option>×5</option>
+					<option>×6</option>
+					<option>×7</option>
+					<option>×8</option>
+					<option>×9</option>
+					<option>×10</option>
+				</select>
+			</div>
+			<div id="g1" style="margin-top: 30px;">
+				<div id="title">MY Guild</div>
+				<div class="progressbackground">
+					<div class="pc1" id="m1" style="height:24px;width:25%"></div>
+				</div>
+				<div>
+					타워(tower)<input type="text" id="t01" onchange="tvalid(this);"><br>
+					점수(score)<input type="text" id="s01" onchange="svalid(this);"><br>
+					<span id="es1">최종 점수(ENDscore):</span>
+				</div>
+			</div>
+			<div id="g2">
+				<div id="title">Enemy1</div>
+				<div class="progressbackground">
+					<div class="pc2" id="m2" style="height:24px;width:25%"></div>
+				</div>
+				<div>
+					타워(tower)<input type="text" id="t02" onchange="tvalid(this);"><br>
+					점수(score)<input type="text" id="s02" onchange="svalid(this);"><br>
+					<span id="es2">최종 점수(ENDscore):</span>
+				</div>
+			</div>
+			<div id="g3">
+				<div id="title">Enemy2</div>
+				<div class="progressbackground">
+					<div class="pc3" id="m3" style="height:24px;width:25%"></div>
+				</div>
+				<div>
+					타워(tower)<input type="text" id="t03" onchange="tvalid(this);"><br>
+					점수(score)<input type="text" id="s03" onchange="svalid(this);"><br>
+					<span id="es3">최종 점수(ENDscore):</span>
+				</div>
+			</div>
+			<div id="endtime">종료(ENDtime) : </div>
+		</div>
+		<span class="blank"></span>
+	</div>
+
+	
+</body>
+</html>
