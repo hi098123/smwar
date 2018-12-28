@@ -1,11 +1,11 @@
 function ei(id){
 	return document.getElementById(id);
 }
-function sps(tower){
+function sps(tower){//speed per sec
 	if(tower<13)
-		return (tower+0)/3600;
+		return parseInt(tower)/60;
 	else if(tower>12 && tower<37)
-		return (tower+10)/3600;
+		return (parseInt(tower)+10)/60;
 }
 var s1,s2,s3,t1,t2,t3;
 function tvalid(el) {
@@ -21,12 +21,15 @@ function tvalid(el) {
 	switch(el.id){
 		case 't01':
 			t1=sps(el.value);
+			ei('spd1').innerText="속도(speed) : "+(t1*60).toFixed(2)+"/min";
 		break;
 		case 't02':
 			t2=sps(el.value);
+			ei('spd2').innerText="속도(speed) : "+(t2*60).toFixed(2)+"/min";
 		break;
 		case 't03':
 			t3=sps(el.value);
+			ei('spd3').innerText="속도(speed) : "+(t3*60).toFixed(2)+"/min";
 		break;
 	}
 }
@@ -40,7 +43,7 @@ function svalid(el) {
 	}else{
 		el.value=0;
 	}
-	switch(el.id){
+	switch(el.id){//progress
 		case 's01':
 			s1=1;
 			ei('m1').style.width=(el.value)/200+"%";
@@ -55,9 +58,11 @@ function svalid(el) {
 		break;
 	}
 }
-function change(g) {
-	var s=1;
+var s=1;
+function speedC() {//speed change
 	if(ei('speed').selectedIndex!=0) s=ei('speed').selectedIndex;
+}
+function change(g) {
 	switch(g){
 		case 'g1':
 			var	p1=parseFloat(ei('s01').value);

@@ -21,7 +21,8 @@
 				<div>
 					타워(tower)<input type="text" id="t01" onchange="tvalid(this);"><br>
 					점수(score)<input type="text" id="s01" onchange="svalid(this);"><br>
-					<span id="es1">최종 점수(ENDscore):</span>
+					<span id="es1">최종 점수(ENDscore):</span><br>
+					<span id="spd1">속도(speed):</span>
 				</div>
 			</div>
 			<div id="g2">
@@ -32,7 +33,8 @@
 				<div>
 					타워(tower)<input type="text" id="t02" onchange="tvalid(this);"><br>
 					점수(score)<input type="text" id="s02" onchange="svalid(this);"><br>
-					<span id="es2">최종 점수(ENDscore):</span>
+					<span id="es2">최종 점수(ENDscore):</span><br>
+					<span id="spd2">속도(speed):</span>
 				</div>
 			</div>
 			<div id="g3">
@@ -43,13 +45,14 @@
 				<div>
 					타워(tower)<input type="text" id="t03" onchange="tvalid(this);"><br>
 					점수(score)<input type="text" id="s03" onchange="svalid(this);"><br>
-					<span id="es3">최종 점수(ENDscore):</span>
+					<span id="es3">최종 점수(ENDscore):</span><br>
+					<span id="spd3">속도(speed):</span>
 				</div>
 			</div>
 			<div id="endtime">종료(ENDtime) : </div>
 			<div style="margin-top: 50px;font-size: 16px;">
 				배속(speed):
-				<select style="width: 280px;" id="speed">
+				<select style="width: 280px;" id="speed" onchange="speedC();">
 					<option>Select Speed</option>
 					<option>×1</option>
 					<option>×2</option>
