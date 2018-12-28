@@ -109,7 +109,8 @@ function end() {//sec later
 		a3/=t3;
 	}
 	var et=Math.min(a1,a2,a3);
-	ei('endtime').innerText="종료(ENDtime) : "+(et/60).toFixed(2)+"min later(분 후 종료)";
+	if(isNaN(et)) et=0;
+	ei('endtime').innerText="종료(ENDtime) : "+(et/60).toFixed(2)+" min later(분 후 종료)";
 
 	ei('es1').innerText="최종 점수(ENDscore) : "+(parseFloat(ei('s01').value)+(et*t1)).toFixed(2);
 	ei('es2').innerText="최종 점수(ENDscore) : "+(parseFloat(ei('s02').value)+(et*t2)).toFixed(2);
