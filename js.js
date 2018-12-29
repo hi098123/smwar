@@ -21,15 +21,15 @@ function tvalid(el) {
 	switch(el.id){
 		case 't01':
 			t1=sps(el.value);
-			ei('spd1').innerText="속도(speed) : "+(t1*60).toFixed(2)+"/min";
+			ei('spd1').innerText=(t1*60).toFixed(2);
 		break;
 		case 't02':
 			t2=sps(el.value);
-			ei('spd2').innerText="속도(speed) : "+(t2*60).toFixed(2)+"/min";
+			ei('spd2').innerText=(t2*60).toFixed(2);
 		break;
 		case 't03':
 			t3=sps(el.value);
-			ei('spd3').innerText="속도(speed) : "+(t3*60).toFixed(2)+"/min";
+			ei('spd3').innerText=(t3*60).toFixed(2);
 		break;
 	}
 }
@@ -65,8 +65,8 @@ function speedC() {//speed change
 function change(g) {
 	switch(g){
 		case 'g1':
-			var	p1=parseFloat(ei('s01').value);
-			p1+=t1*s;
+			var	p1=parseFloat(ei('s01').value);//now score
+			p1+=t1*s;//now score=now score+towerspeed*speed speedC()
 			ei('s01').value=p1;
 			ei('m1').style.width=p1/200+"%";
 			if(p1>=20000) clearInterval(play);
@@ -113,11 +113,11 @@ function end() {//sec later
 		a3=20000-parseFloat(ei('s03').value);
 		a3/=t3;
 	}
-	var et=Math.min(a1,a2,a3);
+	var et=Math.min(a1,a2,a3); //TIME : who is fastest reach score 20000
 	if(isNaN(et)) et=0;
-	ei('endtime').innerText="종료(ENDtime) : "+(et/60).toFixed(2)+" min later(분 후 종료)";
+	ei('endtime').innerText=(et/60).toFixed(2);
 
-	ei('es1').innerText="최종 점수(ENDscore) : "+(parseFloat(ei('s01').value)+(et*t1)).toFixed(2);
-	ei('es2').innerText="최종 점수(ENDscore) : "+(parseFloat(ei('s02').value)+(et*t2)).toFixed(2);
-	ei('es3').innerText="최종 점수(ENDscore) : "+(parseFloat(ei('s03').value)+(et*t3)).toFixed(2);	
+	ei('es1').innerText=(parseFloat(ei('s01').value)+(et*t1)).toFixed(2);	//now score + (endtime*towerspeed)
+	ei('es2').innerText=(parseFloat(ei('s02').value)+(et*t2)).toFixed(2);
+	ei('es3').innerText=(parseFloat(ei('s03').value)+(et*t3)).toFixed(2);	
 }
