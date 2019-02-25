@@ -10,4 +10,5 @@ Summoners War Siege Calculator
 License : MIT license
 Created by : hi098123
 
-Release [https://hi098123.github.io/smwar/](https://hi098123.github.io/smwar/)
+## Release 
+[https://hi098123.github.io/smwar/](https://hi098123.github.io/smwar/)
